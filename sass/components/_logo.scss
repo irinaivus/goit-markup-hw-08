@@ -1,0 +1,24 @@
+.logo__general {
+    color: var(--third-color);
+}
+
+.logo__header {
+    color: var(--sixth-color);
+}
+
+.logo__footer {
+    color: var(--fourth-color);
+    display: block;
+    margin-bottom: 20px;
+}
+
+.page-navigation__logo {
+    margin-right: 93px;
+}
+
+.logo {
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+    font-size: 26px;
+    line-height: 1.19;
+}
