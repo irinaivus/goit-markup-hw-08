@@ -1,23 +1,35 @@
-.about {
+.business {
     padding-top: 0;
+    @media screen and (max-width: 1199px) {
+        display: none;
+    }
 }
 
 .business-list {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+
+
 }
 
 .section-title {
-    font-size: 36px;
-    line-height: 1.16;
+    font-size: 28px;
+    line-height: 1.18;
     text-align: center;
     letter-spacing: 0.03em;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+
+    @media screen and (min-width: 1200px) {
+        font-size: 36px;
+        line-height: 1.17;
+        margin-bottom: 50px;
+    }
 }
 
 .business-list__bg {
     position: relative;
+
 }
 
 .business-list__about {
