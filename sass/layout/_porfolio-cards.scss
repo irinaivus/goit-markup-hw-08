@@ -1,4 +1,5 @@
-.portfolio {
+
+.portfolio-card {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -6,43 +7,11 @@
     @media screen and (max-width: 767px) {
         flex-direction: column;
     }
-
-    @media screen and (min-width: 768px) {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-    }
 }
 
-.portfolio-card__title {
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 0.06em;
-    padding-top: 20px;
-    padding-left: 24px;
-    padding-right: 24px;
-    margin-bottom: 4px;
-}
-
-.portfolio-card__text {
-    font-size: 16px;
-    line-height: 1.88;
-    letter-spacing: 0.03em;
-    color: var(--second-color);
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-bottom: 20px;
-}
-
-.portfolio-card {
-    cursor: pointer;
-    border: 1px solid var(--border-header);
+.portfolio-card__item {
     width: 100%;
-    transition: box-shadow var(--transition-duration);
 
-     &:hover {
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25);
-}
     @media screen and (min-width: 768px) {
         width: calc((100% - 30px) / 2);
     }
@@ -52,7 +21,42 @@
     }
 }
 
+.portfolio-card__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid var(--border-header);
+    transition: box-shadow var(--transition-duration);
 
+    &:hover,
+    &:focus {
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+            1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+}
+
+.portfolio-card__title {
+    color: var(--main-color);
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+}
+
+.portfolio-card__about {
+    padding: 20px 24px;
+    border: 1px solid var(--border-header);
+    border-top: none;
+    flex-grow: 1;
+}
+
+.portfolio-card__text {
+    color: var(--second-color);
+    font-size: 16px;
+    line-height: 1.88;
+}
+
+// overlay //
 .portfolio-card__wrapper {
     position: relative;
     overflow: hidden;
@@ -62,19 +66,24 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: rgba(33, 150, 243, 0.9);
-    color: var(--fourth-color);
+    width: 100%;
+    height: 100%;
     font-size: 18px;
     line-height: 1.56;
     letter-spacing: 0.03em;
-    padding: 63px 24px;
-    height: 101%;
-    width: 100%;
-    /* overflow: auto; */
-    transform: translateY(100%);
+    color: var(--fourth-color);
+    background-color: rgba(33, 150, 243, 0.9);
+    padding: 77px 24px 0;
+    overflow: auto;
+
+    @media screen and (min-width: 768px) {
+        padding: 63px 24px 0;
+    }
+
     transition: transform var(--transition-duration);
 
-    .portfolio-card:hover & {
-        transform: translateY(0%);
+    .portfolio-card__link:hover &,
+    .portfolio-card__link:focus & {
+        transform: translateY(-100%);
     }
 }
